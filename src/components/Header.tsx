@@ -54,9 +54,14 @@ const Header = () => {
       <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-card/95 backdrop-blur-md shadow-lg' : 'bg-card'}`}>
         <div className="container-custom">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <Link to="/" className="flex items-center">
-              <img src={logo} alt="Hum Solar Services" className="h-16 w-auto object-contain" />
+            {/* Logo with Company Name */}
+            <Link to="/" className="flex items-center gap-3">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-secondary shadow-md bg-white p-1 flex-shrink-0">
+                <img src={logo} alt="Hum Solar Services" className="w-full h-full object-contain rounded-full" />
+              </div>
+              <span className="font-display font-bold text-base md:text-lg text-primary">
+                Hum Solar Services
+              </span>
             </Link>
 
             {/* Desktop Navigation */}

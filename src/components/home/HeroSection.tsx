@@ -15,13 +15,13 @@ const slides = [
   },
   {
     id: 2,
-    title: 'SUSTAINABLE SOLUTIONS FOR TOMORROW',
-    subtitle: 'Join thousands of satisfied customers who have made the switch to solar power.',
+    title: 'SUSTAINABLE ENERGY FOR A BRIGHTER TOMORROW',
+    subtitle: 'Join 4,000+ satisfied customers who have already made the switch to solar power.',
     image: commercialSolar,
   },
   {
     id: 3,
-    title: 'EXPERT INSTALLATION & SUPPORT',
+    title: 'EXPERT INSTALLATION & RELIABLE SUPPORT',
     subtitle: 'From consultation to maintenance, we provide complete solar energy solutions.',
     image: industrialSolar,
   },
@@ -78,32 +78,38 @@ const HeroSection = () => {
         </div>
       ))}
 
-      {/* Content */}
+      {/* Content - Always Left Aligned */}
       <div className="container-custom relative z-10 py-20">
-        <div className="max-w-3xl mx-auto lg:mx-0 text-center lg:text-left px-6 lg:px-0">
+        <div className="max-w-2xl px-6 md:px-0">
           {/* Slide Content with Animation */}
           <div key={currentSlide} className="animate-fade-in">
             <span className="inline-block px-4 py-2 bg-secondary/20 text-secondary rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
               🌞 Welcome to Hum Solar Services
             </span>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-4 md:mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-6">
               {slides[currentSlide].title.split(' ').map((word, i) => (
-                <span key={i} className={word === 'CLEAN' || word === 'FUTURE' || word === 'SUSTAINABLE' || word === 'EXPERT' ? 'text-secondary' : ''}>
+                <span key={i} className={
+                  word === 'CLEAN' || word === 'FUTURE' || word === 'SUSTAINABLE' || 
+                  word === 'BRIGHTER' || word === 'EXPERT' || word === 'RELIABLE' 
+                    ? 'text-secondary' 
+                    : ''
+                }>
                   {word}{' '}
                 </span>
               ))}
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
               {slides[currentSlide].subtitle}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="hero" size="lg" className="text-base" asChild>
+            {/* Buttons - Stacked on mobile, side by side on desktop */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="hero" size="lg" className="text-base w-full sm:w-auto" asChild>
                 <Link to="/contact">Get Free Quote</Link>
               </Button>
-              <Button variant="heroOutline" size="lg" className="text-base" asChild>
+              <Button variant="heroOutline" size="lg" className="text-base w-full sm:w-auto" asChild>
                 <Link to="/calculator">
                   <Play className="w-5 h-5 mr-2" />
                   Calculate Savings
@@ -113,8 +119,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Slide Indicators - Positioned at bottom right on desktop, center on mobile */}
-        <div className="absolute bottom-36 md:bottom-28 left-1/2 -translate-x-1/2 lg:left-auto lg:right-12 lg:translate-x-0 flex items-center gap-6">
+        {/* Slide Indicators */}
+        <div className="mt-12 md:mt-0 md:absolute md:bottom-36 md:right-12 flex items-center gap-6 px-6 md:px-0">
           {slides.map((_, index) => (
             <button
               key={index}
@@ -136,7 +142,7 @@ const HeroSection = () => {
         </div>
 
         {/* Arrow Controls - Hidden on mobile */}
-        <div className="hidden md:flex absolute bottom-28 right-12 gap-3">
+        <div className="hidden md:flex absolute bottom-36 right-12 gap-3 mt-6">
           <button
             onClick={prevSlide}
             className="w-12 h-12 rounded-full border-2 border-white/40 flex items-center justify-center text-white hover:bg-white/10 hover:border-secondary transition-all duration-300"
@@ -157,7 +163,7 @@ const HeroSection = () => {
         <div className="container-custom py-5 md:py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="flex items-center gap-3 md:gap-4 justify-center md:justify-start">
+              <div key={index} className="flex items-center gap-3 md:gap-4">
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
                   <stat.icon className="w-5 h-5 md:w-6 md:h-6 text-secondary" />
                 </div>

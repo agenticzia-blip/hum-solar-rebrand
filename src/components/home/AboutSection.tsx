@@ -15,16 +15,9 @@ const AboutSection = () => {
               className="w-full h-full object-cover"
               controls
               autoPlay
-              muted
               loop
               playsInline
             />
-          </div>
-
-          {/* Experience Badge - Bottom Right */}
-          <div className="absolute bottom-0 right-0 md:bottom-4 md:right-4 bg-secondary p-4 md:p-6 rounded-tl-2xl md:rounded-2xl shadow-xl">
-            <div className="text-3xl md:text-4xl font-display font-bold text-secondary-foreground">8+</div>
-            <p className="text-secondary-foreground/90 text-sm md:text-base font-medium">Years Experience</p>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import PageHero from '@/components/PageHero';
 import ReviewsSection from '@/components/home/ReviewsSection';
 import { Star, Quote, ThumbsUp, Award, Users } from 'lucide-react';
+import heroSolar from '@/assets/hero-solar.jpg';
 
 const testimonials = [
   {
@@ -67,6 +68,8 @@ const ReviewsPage = () => {
         title="Customer Reviews"
         subtitle="What our valued customers say about their experience with Hum Solar Services"
         breadcrumbs={[{ label: 'Reviews' }]}
+        backgroundImage={heroSolar}
+        showCTA
       />
 
       {/* Stats Section */}

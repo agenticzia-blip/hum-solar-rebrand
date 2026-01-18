@@ -6,14 +6,13 @@ import logo from '@/assets/logo.png';
 
 const navLinks = [
   { name: 'Home', path: '/' },
-  { name: 'Company Profile', path: '/company' },
-  { name: 'Our Products', path: '/products' },
-  { name: 'Our Solutions', path: '/solutions' },
+  { name: 'Company', path: '/company' },
+  { name: 'Products', path: '/products' },
+  { name: 'Solutions', path: '/solutions' },
   { name: 'Projects', path: '/projects' },
   { name: 'Reviews', path: '/reviews' },
-  { name: 'Blog', path: '/blog' },
-  { name: 'Calculate', path: '/calculator' },
-  { name: 'Contact Us', path: '/contact' },
+  { name: 'Calculator', path: '/calculator' },
+  { name: 'Contact', path: '/contact' },
 ];
 
 const Header = () => {
@@ -65,12 +64,12 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden xl:flex items-center gap-0.5">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                     location.pathname === link.path
                       ? 'bg-primary text-primary-foreground'
                       : 'text-foreground hover:bg-muted hover:text-primary'
@@ -82,7 +81,7 @@ const Header = () => {
             </nav>
 
             {/* CTA Button */}
-            <div className="hidden lg:block">
+            <div className="hidden xl:block">
               <Button variant="hero" asChild>
                 <Link to="/contact">Get Quote</Link>
               </Button>
@@ -91,7 +90,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+              className="xl:hidden p-2 rounded-lg hover:bg-muted transition-colors"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -100,7 +99,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-card border-t border-border animate-fade-in">
+          <div className="xl:hidden bg-card border-t border-border animate-fade-in">
             <nav className="container-custom py-4 flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link

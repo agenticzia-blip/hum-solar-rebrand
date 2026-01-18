@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageHero from '@/components/PageHero';
 import { Button } from '@/components/ui/button';
 import { Minus, Plus, Zap, ArrowRight } from 'lucide-react';
+import industrialSolar from '@/assets/industrial-solar.jpg';
 
 const appliances = [
   { name: 'Tube Light', watts: 40 },
@@ -53,6 +54,8 @@ const CalculatorPage = () => {
         title="Solar Calculator"
         subtitle="Calculate your solar system requirements"
         breadcrumbs={[{ label: 'Calculate' }]}
+        backgroundImage={industrialSolar}
+        showCTA
       />
 
       <section className="section-padding bg-background">

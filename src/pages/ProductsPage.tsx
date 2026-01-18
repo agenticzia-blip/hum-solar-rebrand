@@ -104,6 +104,8 @@ const ProductsPage = () => {
         title="Our Products"
         subtitle="Premium solar equipment from world-leading manufacturers"
         breadcrumbs={[{ label: 'Our Products' }]}
+        backgroundImage={solarPanel}
+        showCTA
       />
 
       <section className="section-padding bg-background">

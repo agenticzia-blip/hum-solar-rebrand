@@ -9,7 +9,7 @@ const AboutSection = () => {
       {/* Video Section - Full Width outside container */}
       <div className="px-4 md:px-8 lg:px-12 mb-8 md:mb-12">
         <div className="relative">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[280px] sm:h-auto sm:aspect-video">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video">
             <img
               src={commercialSolar}
               alt="Solar Installation"

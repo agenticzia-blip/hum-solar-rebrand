@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, Play, Award, Zap, Users, Building2 } from 'lucide-react';
+import { Play, Award, Zap, Users, Building2 } from 'lucide-react';
 import heroImage from '@/assets/hero-solar.jpg';
 import commercialSolar from '@/assets/commercial-solar.jpg';
 import industrialSolar from '@/assets/industrial-solar.jpg';
@@ -107,7 +107,7 @@ const HeroSection = () => {
             </p>
 
             {/* Buttons - Stacked on mobile, side by side on desktop */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-16 md:mb-20">
+            <div className="flex flex-col sm:flex-row gap-4 mb-32 md:mb-36">
               <Button variant="hero" size="lg" className="text-base w-full sm:w-auto" asChild>
                 <Link to="/contact">Get Free Quote</Link>
               </Button>
@@ -121,21 +121,6 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Arrow Controls - Navigation without text indicators */}
-        <div className="absolute bottom-40 md:bottom-36 right-6 md:right-12 flex gap-3 z-20">
-          <button
-            onClick={prevSlide}
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white/40 flex items-center justify-center text-white hover:bg-white/10 hover:border-secondary transition-all duration-300"
-          >
-            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white/40 flex items-center justify-center text-white hover:bg-white/10 hover:border-secondary transition-all duration-300"
-          >
-            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
-          </button>
-        </div>
       </div>
 
       {/* Stats Bar */}

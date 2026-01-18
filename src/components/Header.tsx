@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail, ChevronDown, Sun } from 'lucide-react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logo from '@/assets/logo.png';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -54,14 +55,8 @@ const Header = () => {
         <div className="container-custom">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center shadow-lg">
-                <Sun className="w-7 h-7 text-secondary" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-display font-bold text-primary">Hum Solar</span>
-                <span className="text-xs text-muted-foreground font-medium">Services</span>
-              </div>
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="Hum Solar Services" className="h-16 w-auto object-contain" />
             </Link>
 
             {/* Desktop Navigation */}

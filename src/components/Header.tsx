@@ -52,9 +52,9 @@ const Header = () => {
       {/* Main Header */}
       <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-card/95 backdrop-blur-md shadow-lg' : 'bg-card'}`}>
         <div className="container-custom">
-          <div className="flex items-center justify-between h-20">
+        <div className="flex items-center h-20">
             {/* Logo with Company Name */}
-            <Link to="/" className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3 flex-shrink-0">
               <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-secondary shadow-md bg-white p-1 flex-shrink-0">
                 <img src={logo} alt="Hum Solar Services" className="w-full h-full object-contain rounded-full" />
               </div>
@@ -63,8 +63,8 @@ const Header = () => {
               </span>
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden xl:flex items-center gap-0.5">
+            {/* Desktop Navigation - Left aligned after logo */}
+            <nav className="hidden xl:flex items-center gap-1 ml-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -79,6 +79,9 @@ const Header = () => {
                 </Link>
               ))}
             </nav>
+
+            {/* Spacer to push CTA to right */}
+            <div className="flex-1" />
 
             {/* CTA Button */}
             <div className="hidden xl:block">

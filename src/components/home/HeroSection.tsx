@@ -80,61 +80,47 @@ const HeroSection = () => {
       ))}
 
 
-      {/* Content - Left Aligned */}
+      {/* Content - Always Left Aligned */}
       <div className="container-custom relative z-10 py-20">
-        <div className="flex items-center justify-between">
-          {/* Left Content */}
-          <div className="max-w-2xl text-left">
-            {/* Slide Content with Animation */}
-            <div key={currentSlide} className="animate-fade-in">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-6 italic">
-                {slides[currentSlide].title.split(' ').map((word, i) => (
-                  <span key={i} className={
-                    word === 'CLEAN' || word === 'FUTURE' || word === 'SUSTAINABLE' || 
-                    word === 'BRIGHTER' || word === 'EXPERT' || word === 'RELIABLE' 
-                      ? 'text-secondary' 
-                      : ''
-                  }>
-                    {word}{' '}
-                  </span>
-                ))}
-              </h1>
-              
-              <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
-                {slides[currentSlide].subtitle}
-              </p>
+        <div className="max-w-2xl px-6 md:px-0">
+          {/* Slide Content with Animation */}
+          <div key={currentSlide} className="animate-fade-in">
+            <span className="inline-block px-4 py-2 bg-secondary/20 text-secondary rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
+              🌞 Welcome to Hum Solar Services
+            </span>
+            
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-6">
+              {slides[currentSlide].title.split(' ').map((word, i) => (
+                <span key={i} className={
+                  word === 'CLEAN' || word === 'FUTURE' || word === 'SUSTAINABLE' || 
+                  word === 'BRIGHTER' || word === 'EXPERT' || word === 'RELIABLE' 
+                    ? 'text-secondary' 
+                    : ''
+                }>
+                  {word}{' '}
+                </span>
+              ))}
+            </h1>
+            
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
+              {slides[currentSlide].subtitle}
+            </p>
 
-              {/* Buttons - Stacked on mobile, side by side on desktop */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-32 md:mb-36">
-                <Button variant="hero" size="lg" className="text-base w-full sm:w-auto" asChild>
-                  <Link to="/contact">Get Free Quote</Link>
-                </Button>
-                <Button variant="heroOutline" size="lg" className="text-base w-full sm:w-auto" asChild>
-                  <Link to="/calculator">
-                    Calculate Savings
-                  </Link>
-                </Button>
-              </div>
+            {/* Buttons - Stacked on mobile, side by side on desktop */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-32 md:mb-36">
+              <Button variant="hero" size="lg" className="text-base w-full sm:w-auto" asChild>
+                <Link to="/contact">Get Free Quote</Link>
+              </Button>
+              <Button variant="heroOutline" size="lg" className="text-base w-full sm:w-auto" asChild>
+                <Link to="/calculator">
+                  <Play className="w-5 h-5 mr-2" />
+                  Calculate Savings
+                </Link>
+              </Button>
             </div>
           </div>
-
-          {/* Right Side - Slide Indicators */}
-          <div className="hidden md:flex flex-col gap-4 items-center">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg transition-all duration-300 ${
-                  index === currentSlide
-                    ? 'bg-secondary text-primary scale-110'
-                    : 'bg-white/20 text-white hover:bg-white/30'
-                }`}
-              >
-                {String(index + 1).padStart(2, '0')}
-              </button>
-            ))}
-          </div>
         </div>
+
       </div>
 
       {/* Stats Bar */}

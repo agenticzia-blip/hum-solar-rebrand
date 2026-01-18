@@ -5,7 +5,6 @@ import { ChevronLeft, ChevronRight, Play, Award, Zap, Users, Building2 } from 'l
 import heroImage from '@/assets/hero-solar.jpg';
 import commercialSolar from '@/assets/commercial-solar.jpg';
 import industrialSolar from '@/assets/industrial-solar.jpg';
-import logo from '@/assets/logo.png';
 
 const slides = [
   {
@@ -80,21 +79,14 @@ const HeroSection = () => {
       ))}
 
       {/* Content - Always Left Aligned */}
-      <div className="container-custom relative z-10 py-20 pb-40 md:pb-44">
+      <div className="container-custom relative z-10 py-20">
         <div className="max-w-2xl px-6 md:px-0">
-          {/* Logo and Business Name */}
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white p-2 shadow-xl flex items-center justify-center">
-              <img src={logo} alt="Hum Solar Services" className="w-full h-full object-contain rounded-full" />
-            </div>
-            <div>
-              <h2 className="text-xl md:text-2xl font-display font-bold text-white">Hum Solar Services</h2>
-              <p className="text-secondary text-sm md:text-base font-medium">Powering Pakistan's Future</p>
-            </div>
-          </div>
-
           {/* Slide Content with Animation */}
           <div key={currentSlide} className="animate-fade-in">
+            <span className="inline-block px-4 py-2 bg-secondary/20 text-secondary rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
+              🌞 Welcome to Hum Solar Services
+            </span>
+            
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-6">
               {slides[currentSlide].title.split(' ').map((word, i) => (
                 <span key={i} className={
@@ -127,18 +119,23 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Slide Indicators - Dots Only */}
-        <div className="mt-12 md:mt-0 md:absolute md:bottom-36 md:right-12 flex items-center gap-3 px-6 md:px-0">
+        {/* Slide Indicators */}
+        <div className="mt-12 md:mt-0 md:absolute md:bottom-36 md:right-12 flex items-center gap-6 px-6 md:px-0">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className="p-1 transition-all duration-500"
+              className={`flex items-center gap-3 transition-all duration-500 group ${
+                currentSlide === index ? 'text-secondary' : 'text-white/50 hover:text-white'
+              }`}
             >
-              <div className={`rounded-full transition-all duration-500 ${
-                currentSlide === index 
-                  ? 'w-10 h-3 bg-secondary' 
-                  : 'w-3 h-3 bg-white/50 hover:bg-white/80'
+              <span className={`text-lg font-bold transition-all duration-300 ${
+                currentSlide === index ? 'text-2xl' : ''
+              }`}>
+                0{index + 1}
+              </span>
+              <div className={`h-0.5 transition-all duration-500 ${
+                currentSlide === index ? 'w-12 bg-secondary' : 'w-6 bg-white/40 group-hover:w-8 group-hover:bg-white/60'
               }`} />
             </button>
           ))}

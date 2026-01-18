@@ -14,8 +14,7 @@ const AboutSection = () => {
               src={aboutVideo}
               className="w-full h-full object-cover"
               controls
-              autoPlay
-              loop
+              muted
               playsInline
             />
           </div>

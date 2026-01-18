@@ -6,9 +6,9 @@ import commercialSolar from '@/assets/commercial-solar.jpg';
 const AboutSection = () => {
   return (
     <section className="section-padding bg-background">
-      <div className="container-custom">
-        {/* Video Section - Full Width */}
-        <div className="relative mb-8 md:mb-12">
+      {/* Video Section - Full Width outside container */}
+      <div className="px-4 md:px-8 lg:px-12 mb-8 md:mb-12">
+        <div className="relative">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video">
             <img
               src={commercialSolar}
@@ -29,8 +29,11 @@ const AboutSection = () => {
             <p className="text-secondary-foreground/90 text-sm md:text-base font-medium">Years Experience</p>
           </div>
         </div>
+      </div>
 
-        {/* Content Section */}
+      {/* Content Section */}
+      <div className="container-custom">
+
         <div className="max-w-3xl">
           <span className="inline-block text-secondary text-sm md:text-base font-semibold uppercase tracking-wider mb-3">
             ABOUT HUM SOLAR SERVICES

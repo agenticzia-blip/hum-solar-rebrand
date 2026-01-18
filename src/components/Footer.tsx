@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Sun, Facebook, Twitter, Linkedin, Instagram, Youtube, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram, Youtube, ArrowRight } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const quickLinks = [
   { name: 'Home', path: '/' },
@@ -26,14 +27,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
-                <Sun className="w-7 h-7 text-secondary" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-display font-bold text-white">Hum Solar</span>
-                <span className="text-xs text-muted-foreground font-medium">Services</span>
-              </div>
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="Hum Solar Services" className="h-20 w-auto object-contain bg-white rounded-lg p-2" />
             </Link>
             <p className="text-muted-foreground leading-relaxed">
               Leading solar energy solutions provider in Pakistan. We deliver high-quality solar systems for residential, commercial, and industrial sectors with complete net metering support.

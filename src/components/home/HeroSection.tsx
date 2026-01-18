@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, Play, Award, Zap, Users, Building2 } from 'l
 import heroImage from '@/assets/hero-solar.jpg';
 import commercialSolar from '@/assets/commercial-solar.jpg';
 import industrialSolar from '@/assets/industrial-solar.jpg';
-import logo from '@/assets/logo.png';
+
 
 const slides = [
   {
@@ -79,15 +79,6 @@ const HeroSection = () => {
         </div>
       ))}
 
-      {/* Logo and Business Name - Top Right */}
-      <div className="absolute top-6 right-6 md:top-8 md:right-12 z-20 flex items-center gap-3">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-secondary shadow-lg bg-white p-1">
-          <img src={logo} alt="Hum Solar Services" className="w-full h-full object-contain rounded-full" />
-        </div>
-        <span className="hidden sm:block text-white font-display font-bold text-lg md:text-xl">
-          Hum Solar Services
-        </span>
-      </div>
 
       {/* Content - Always Left Aligned */}
       <div className="container-custom relative z-10 py-20">

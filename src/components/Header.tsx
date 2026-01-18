@@ -31,15 +31,6 @@ const Header = () => {
 
   return (
     <>
-      {/* Business Name Bar */}
-      <div className="bg-secondary text-secondary-foreground py-2">
-        <div className="container-custom text-center">
-          <span className="text-lg md:text-xl font-display font-bold tracking-wide">
-            HUM SOLAR SERVICES
-          </span>
-        </div>
-      </div>
-
       {/* Top Bar */}
       <div className="bg-primary text-primary-foreground py-2 hidden md:block">
         <div className="container-custom flex justify-between items-center text-sm">
@@ -63,11 +54,9 @@ const Header = () => {
       <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-card/95 backdrop-blur-md shadow-lg' : 'bg-card'}`}>
         <div className="container-custom">
           <div className="flex items-center justify-between h-20">
-            {/* Logo - Circular */}
+            {/* Logo */}
             <Link to="/" className="flex items-center">
-              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-secondary shadow-lg bg-white flex items-center justify-center">
-                <img src={logo} alt="Hum Solar Services" className="h-14 w-14 object-contain" />
-              </div>
+              <img src={logo} alt="Hum Solar Services" className="h-16 w-auto object-contain" />
             </Link>
 
             {/* Desktop Navigation */}

@@ -7,7 +7,7 @@ const AboutSection = () => {
   return (
     <section className="section-padding bg-background">
       {/* Video Section - Full Width outside container */}
-      <div className="px-2 md:px-6 lg:px-8 mb-8 md:mb-12">
+      <div className="px-0 sm:px-2 md:px-4 lg:px-6 mb-10 md:mb-14">
         <div className="relative">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video">
             <video

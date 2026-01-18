@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, Play, Award, Zap, Users, Building2 } from 'l
 import heroImage from '@/assets/hero-solar.jpg';
 import commercialSolar from '@/assets/commercial-solar.jpg';
 import industrialSolar from '@/assets/industrial-solar.jpg';
+import logo from '@/assets/logo.png';
 
 const slides = [
   {
@@ -78,6 +79,16 @@ const HeroSection = () => {
         </div>
       ))}
 
+      {/* Logo and Business Name - Top Right */}
+      <div className="absolute top-6 right-6 md:top-8 md:right-12 z-20 flex items-center gap-3">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-secondary shadow-lg bg-white p-1">
+          <img src={logo} alt="Hum Solar Services" className="w-full h-full object-contain rounded-full" />
+        </div>
+        <span className="hidden sm:block text-white font-display font-bold text-lg md:text-xl">
+          Hum Solar Services
+        </span>
+      </div>
+
       {/* Content - Always Left Aligned */}
       <div className="container-custom relative z-10 py-20">
         <div className="max-w-2xl px-6 md:px-0">
@@ -105,7 +116,7 @@ const HeroSection = () => {
             </p>
 
             {/* Buttons - Stacked on mobile, side by side on desktop */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-16 md:mb-20">
               <Button variant="hero" size="lg" className="text-base w-full sm:w-auto" asChild>
                 <Link to="/contact">Get Free Quote</Link>
               </Button>
@@ -119,41 +130,19 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Slide Indicators */}
-        <div className="mt-12 md:mt-0 md:absolute md:bottom-36 md:right-12 flex items-center gap-6 px-6 md:px-0">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`flex items-center gap-3 transition-all duration-500 group ${
-                currentSlide === index ? 'text-secondary' : 'text-white/50 hover:text-white'
-              }`}
-            >
-              <span className={`text-lg font-bold transition-all duration-300 ${
-                currentSlide === index ? 'text-2xl' : ''
-              }`}>
-                0{index + 1}
-              </span>
-              <div className={`h-0.5 transition-all duration-500 ${
-                currentSlide === index ? 'w-12 bg-secondary' : 'w-6 bg-white/40 group-hover:w-8 group-hover:bg-white/60'
-              }`} />
-            </button>
-          ))}
-        </div>
-
-        {/* Arrow Controls - Hidden on mobile */}
-        <div className="hidden md:flex absolute bottom-36 right-12 gap-3 mt-6">
+        {/* Arrow Controls - Navigation without text indicators */}
+        <div className="absolute bottom-40 md:bottom-36 right-6 md:right-12 flex gap-3 z-20">
           <button
             onClick={prevSlide}
-            className="w-12 h-12 rounded-full border-2 border-white/40 flex items-center justify-center text-white hover:bg-white/10 hover:border-secondary transition-all duration-300"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white/40 flex items-center justify-center text-white hover:bg-white/10 hover:border-secondary transition-all duration-300"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
           <button
             onClick={nextSlide}
-            className="w-12 h-12 rounded-full border-2 border-white/40 flex items-center justify-center text-white hover:bg-white/10 hover:border-secondary transition-all duration-300"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white/40 flex items-center justify-center text-white hover:bg-white/10 hover:border-secondary transition-all duration-300"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
         </div>
       </div>

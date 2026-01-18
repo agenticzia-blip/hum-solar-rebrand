@@ -80,7 +80,7 @@ const HeroSection = () => {
       ))}
 
       {/* Content - Always Left Aligned */}
-      <div className="container-custom relative z-10 py-20">
+      <div className="container-custom relative z-10 py-20 pb-40 md:pb-44">
         <div className="max-w-2xl px-6 md:px-0">
           {/* Logo and Business Name */}
           <div className="flex items-center gap-4 mb-6">

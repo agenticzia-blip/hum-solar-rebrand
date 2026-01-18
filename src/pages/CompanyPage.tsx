@@ -22,6 +22,8 @@ const CompanyPage = () => {
         title="Company Profile"
         subtitle="Your trusted partner in solar energy solutions since 2016"
         breadcrumbs={[{ label: 'Company Profile' }]}
+        backgroundImage={commercialSolar}
+        showCTA
       />
 
       {/* Company Overview */}

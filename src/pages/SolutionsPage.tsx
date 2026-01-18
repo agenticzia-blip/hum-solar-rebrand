@@ -101,6 +101,8 @@ const SolutionsPage = () => {
         title="Our Solutions"
         subtitle="Comprehensive solar energy solutions for every need"
         breadcrumbs={[{ label: 'Our Solutions' }]}
+        backgroundImage={residentialSolar}
+        showCTA
       />
 
       <section className="section-padding bg-background">

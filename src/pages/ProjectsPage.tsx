@@ -109,6 +109,8 @@ const ProjectsPage = () => {
         title="Our Projects"
         subtitle="Explore our portfolio of successful solar installations across Pakistan"
         breadcrumbs={[{ label: 'Projects' }]}
+        backgroundImage={industrialSolar}
+        showCTA
       />
 
       <section className="section-padding bg-background">

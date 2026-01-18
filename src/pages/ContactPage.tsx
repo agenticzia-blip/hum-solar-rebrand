@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import commercialSolar from '@/assets/commercial-solar.jpg';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
@@ -20,6 +21,8 @@ const ContactPage = () => {
         title="Contact Us"
         subtitle="Get in touch with our solar experts today"
         breadcrumbs={[{ label: 'Contact Us' }]}
+        backgroundImage={commercialSolar}
+        showCTA
       />
 
       <section className="section-padding bg-background">

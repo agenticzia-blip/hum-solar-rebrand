@@ -119,27 +119,6 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Slide Indicators */}
-        <div className="mt-12 md:mt-0 md:absolute md:bottom-36 md:right-12 flex items-center gap-6 px-6 md:px-0">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`flex items-center gap-3 transition-all duration-500 group ${
-                currentSlide === index ? 'text-secondary' : 'text-white/50 hover:text-white'
-              }`}
-            >
-              <span className={`text-lg font-bold transition-all duration-300 ${
-                currentSlide === index ? 'text-2xl' : ''
-              }`}>
-                0{index + 1}
-              </span>
-              <div className={`h-0.5 transition-all duration-500 ${
-                currentSlide === index ? 'w-12 bg-secondary' : 'w-6 bg-white/40 group-hover:w-8 group-hover:bg-white/60'
-              }`} />
-            </button>
-          ))}
-        </div>
 
         {/* Arrow Controls - Hidden on mobile */}
         <div className="hidden md:flex absolute bottom-36 right-12 gap-3 mt-6">

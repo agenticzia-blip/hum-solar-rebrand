@@ -13,7 +13,7 @@ const AboutSection = () => {
             <img
               src={commercialSolar}
               alt="Solar Installation"
-              className="w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] object-cover"
+              className="w-full h-[320px] sm:h-[420px] md:h-[520px] lg:h-[600px] object-cover"
             />
             {/* Play Button Overlay */}
             <button className="absolute inset-0 flex items-center justify-center group">

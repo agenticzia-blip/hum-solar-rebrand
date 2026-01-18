@@ -1,80 +1,56 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Play, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Play, ArrowRight } from 'lucide-react';
 import commercialSolar from '@/assets/commercial-solar.jpg';
-
-const highlights = [
-  '8+ Years of Industry Experience',
-  '60MW+ Installed Solar Capacity',
-  '4,000+ Residential & Commercial Installations',
-  'Complete Net Metering Support',
-];
 
 const AboutSection = () => {
   return (
     <section className="section-padding bg-background">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left - Image & Video */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src={commercialSolar}
-                alt="Solar Installation"
-                className="w-full h-[400px] md:h-[500px] object-cover"
-              />
-              {/* Play Button Overlay */}
-              <button className="absolute inset-0 flex items-center justify-center group">
-                <div className="w-20 h-20 rounded-full bg-secondary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-300">
-                  <Play className="w-8 h-8 text-secondary-foreground ml-1" fill="currentColor" />
-                </div>
-              </button>
-            </div>
-
-            {/* Floating Card */}
-            <div className="absolute -bottom-6 -right-6 md:bottom-8 md:-right-8 bg-card p-6 rounded-2xl shadow-xl border border-border max-w-[240px]">
-              <div className="text-4xl font-display font-bold text-primary mb-2">60MW+</div>
-              <p className="text-muted-foreground text-sm">Solar Capacity Installed Across Pakistan</p>
-            </div>
-
-            {/* Decorative Element */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-secondary/20 rounded-2xl -z-10" />
+        {/* Video Section - Full Width */}
+        <div className="relative mb-8 md:mb-12">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src={commercialSolar}
+              alt="Solar Installation"
+              className="w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] object-cover"
+            />
+            {/* Play Button Overlay */}
+            <button className="absolute inset-0 flex items-center justify-center group">
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-secondary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-300">
+                <Play className="w-6 h-6 md:w-8 md:h-8 text-secondary-foreground ml-1" fill="currentColor" />
+              </div>
+            </button>
           </div>
 
-          {/* Right - Content */}
-          <div className="space-y-6">
-            <div>
-              <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
-                About Us
-              </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight">
-                From Vision To Installation{' '}
-                <span className="text-primary">We Power It All</span>
-              </h2>
-            </div>
-
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Hum Solar Services is a leading solar energy provider offering domestic, commercial, industrial, and agricultural solar systems from 5kW to Megawatt scale. We provide complete net metering files and process assistance for hassle-free installation.
-            </p>
-
-            <div className="space-y-3">
-              {highlights.map((item, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0" />
-                  <span className="text-foreground font-medium">{item}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-4">
-              <Button variant="default" size="lg" asChild>
-                <Link to="/company">
-                  Read More
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-              </Button>
-            </div>
+          {/* Experience Badge - Bottom Right */}
+          <div className="absolute bottom-0 right-0 md:bottom-4 md:right-4 bg-secondary p-4 md:p-6 rounded-tl-2xl md:rounded-2xl shadow-xl">
+            <div className="text-3xl md:text-4xl font-display font-bold text-secondary-foreground">8+</div>
+            <p className="text-secondary-foreground/90 text-sm md:text-base font-medium">Years Experience</p>
           </div>
+        </div>
+
+        {/* Content Section */}
+        <div className="max-w-3xl">
+          <span className="inline-block text-secondary text-sm md:text-base font-semibold uppercase tracking-wider mb-3">
+            ABOUT HUM SOLAR SERVICES
+          </span>
+          
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight mb-6">
+            From Vision To Installation{' '}
+            <span className="text-primary">We Power It All</span>
+          </h2>
+
+          <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8">
+            Hum Solar Services is your trusted partner for comprehensive solar solutions. We specialize in domestic, commercial, industrial, and agricultural solar systems, offering complete sales and services from 5kW to Megawatt installations. We also provide complete net metering files and process assistance for hassle-free installation.
+          </p>
+
+          <Button variant="default" size="lg" asChild>
+            <Link to="/company">
+              Read More
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

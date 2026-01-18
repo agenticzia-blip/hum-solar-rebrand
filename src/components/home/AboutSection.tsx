@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Play, ArrowRight } from 'lucide-react';
-import commercialSolar from '@/assets/commercial-solar.jpg';
+import { ArrowRight } from 'lucide-react';
+import aboutVideo from '@/assets/about-video.mp4';
 
 const AboutSection = () => {
   return (
@@ -10,17 +10,15 @@ const AboutSection = () => {
       <div className="px-2 md:px-6 lg:px-8 mb-8 md:mb-12">
         <div className="relative">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video">
-            <img
-              src={commercialSolar}
-              alt="Solar Installation"
+            <video
+              src={aboutVideo}
               className="w-full h-full object-cover"
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
             />
-            {/* Play Button Overlay */}
-            <button className="absolute inset-0 flex items-center justify-center group">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-secondary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-300">
-                <Play className="w-6 h-6 md:w-8 md:h-8 text-secondary-foreground ml-1" fill="currentColor" />
-              </div>
-            </button>
           </div>
 
           {/* Experience Badge - Bottom Right */}

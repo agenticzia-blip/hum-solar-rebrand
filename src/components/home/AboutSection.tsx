@@ -9,11 +9,11 @@ const AboutSection = () => {
       <div className="container-custom">
         {/* Video Section - Full Width */}
         <div className="relative mb-8 md:mb-12">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video">
             <img
               src={commercialSolar}
               alt="Solar Installation"
-              className="w-full h-[320px] sm:h-[420px] md:h-[520px] lg:h-[600px] object-cover"
+              className="w-full h-full object-cover"
             />
             {/* Play Button Overlay */}
             <button className="absolute inset-0 flex items-center justify-center group">
